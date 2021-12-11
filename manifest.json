@@ -1,0 +1,12 @@
+{
+    "name": "cs gpa calculator",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "description": "Chrome Extension",
+    "content_scripts": [{
+      "matches": ["https://app4.srv.nagoya-u.ac.jp/camweb/wssrlstr.do"],
+      "js": [
+        "app.js"
+      ]
+    }]
+  }
