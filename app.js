@@ -180,14 +180,14 @@ function main() {
     
     console.log(table_rows);
     for (let i = 0; i < table_rows.childNodes.length; i++){
-        if (table_rows.childNodes[i].childNodes.length == 13){
+        if (table_rows.childNodes[i].childNodes.length == 13 && remove_nbsp(table_rows.childNodes[i].childNodes[5].innerText) != "F"){
 
             // 情報システム系必修
                 if (required_courses_information_system.includes(remove_nbsp(table_rows.childNodes[i].childNodes[1].innerText))){
                 let credit = Number(remove_nbsp(table_rows.childNodes[i].childNodes[3].innerText));
                 grade_points_information_system += evaluation2gradepoint[remove_nbsp(table_rows.childNodes[i].childNodes[5].innerText)] * credit;
                 credits_information_system += credit;
-                console.log(remove_nbsp(table_rows.childNodes[i].childNodes[1].innerText));
+                console.log(`information system:  ${remove_nbsp(table_rows.childNodes[i].childNodes[1].innerText)}`);
             }
 
             // 知能システム系必修
@@ -195,7 +195,7 @@ function main() {
                 let credit = Number(remove_nbsp(table_rows.childNodes[i].childNodes[3].innerText));
                 grade_points_intelligence_system += evaluation2gradepoint[remove_nbsp(table_rows.childNodes[i].childNodes[5].innerText)] * credit;
                 credits_intelligence_system += credit;
-                console.log(remove_nbsp(table_rows.childNodes[i].childNodes[1].innerText));
+                console.log(`intelligence system: ${remove_nbsp(table_rows.childNodes[i].childNodes[1].innerText)}`);
             }
             
         }
@@ -204,6 +204,7 @@ function main() {
     console.log(`information: ${grade_points_information_system / credits_information_system}`);
     console.log(`intelligence: ${grade_points_intelligence_system / credits_intelligence_system}`);
 
+    // htmlに表示を追加
     let insert_target = document.getElementById("listTop");
     let result = document.createElement("div");
     result.style = "text-align:left;margin-left: 20px;"
