@@ -6,9 +6,14 @@
 ## 使い方
 
 1. このリポジトリをダウンロード
-1. chromeで[拡張機能](chrome://extensions/) を開く
+1. chromeで 拡張機能の設定ページ chrome://extensions/ を開く
 1. 「パッケージ化されていない拡張機能を読み込む」で, ダウンロードしたディレクトリを選択
 1. [習得科目確認ページ](https://app4.srv.nagoya-u.ac.jp/camweb/wssrlstr.do)を開く
+
+## アップデート方法
+1. このリポジトリをダウンロード
+1. chromeで 拡張機能の設定ページ chrome://extensions/ を開く
+1. この拡張機能の再読込ボタンを推す
 
 # License
 The source code is licensed MIT. The website content is licensed CC BY 4.0,see LICENSE.
