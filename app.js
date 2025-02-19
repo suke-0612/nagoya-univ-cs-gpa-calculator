@@ -1,4 +1,5 @@
-const required_courses_information_system = [
+
+const liveral_art_courses = [
   "微分積分学Ⅰ",
   "微分積分学Ⅱ",
   "線形代数学Ⅰ",
@@ -6,19 +7,18 @@ const required_courses_information_system = [
   "物理学基礎Ⅰ",
   "物理学基礎Ⅱ",
   "物理学実験",
+];
 
-  "インフォマティックス１",
+const required_major_base_courses = [
+  "[遠隔]インフォマティックス１",
   "インフォマティックス２",
-  "インフォマティックス３",
+  "[遠隔]インフォマティックス３",
   "インフォマティックス４",
   "情報の挑戦者・開拓者たち",
   "情報セキュリティとリテラシー１",
   "情報セキュリティとリテラシー２",
   "プログラミング１",
   "プログラミング２",
-  "離散数学及び演習",
-  "論理設計及び演習１",
-  "論理設計及び演習２",
   "情報理論",
   "確率統計及び演習",
   "アルゴリズム１",
@@ -28,7 +28,12 @@ const required_courses_information_system = [
   "論理学１",
   "論理学２ｃ",
   "データマイニング入門",
+];
 
+const common_required_major_courses = [
+  "離散数学及び演習",
+  "論理設計及び演習１",
+  "論理設計及び演習２",
   "情報倫理と法",
   "ソフトウエア開発法及び演習",
   "オブジェクト指向言語及び演習",
@@ -38,86 +43,37 @@ const required_courses_information_system = [
   "数値解析及び演習",
   "計算機アーキテクチャ基礎及び演習１",
   "計算機アーキテクチャ基礎及び演習２",
-  "非手続型言語及び演習",
+  "[遠隔]数理統計学",
   "コンパイラ",
-  "データベース１",
-  "データベース２",
   "最適化１",
   "最適化２",
-  "人工知能基礎１",
-  "人工知能基礎２",
-  "先端計算機アーキテクチャ１",
-  "先端計算機アーキテクチャ２",
-  "オペレーティング・システム及び演習１",
-  "オペレーティング・システム及び演習２",
-  "ソフトウェア設計法１",
-  "ソフトウェア設計法２",
+  "[遠隔]人工知能基礎１",
+  "[遠隔]人工知能基礎２",
+  "オペレーティング・システム基礎及び演習",
   "情報ネットワーク",
-  "ネットワークセキュリティ",
-  "計算理論",
-  "コンピュータ科学実験１",
-  "コンピュータ科学実験２",
-  "コンピュータ科学実験３",
+  "コンピュータ科学実験a",
+  "コンピュータ科学実験b",
+  "コンピュータ科学実験c",
 ];
+
+const recuquired_courses = liveral_art_courses.concat(required_major_base_courses).concat(common_required_major_courses);
+
+const required_courses_information_system = [
+  "非手続型言語及び演習",
+  "オペレーティング・システム実現及び演習",
+  "ソフトウェア工学基礎",
+  "ネットワークセキュリティ"
+].concat(recuquired_courses);
 
 const required_courses_intelligence_system = [
-  "微分積分学Ⅰ",
-  "微分積分学Ⅱ",
-  "線形代数学Ⅰ",
-  "線形代数学Ⅱ",
-  "物理学基礎Ⅰ",
-  "物理学基礎Ⅱ",
-  "物理学実験",
-
-  "インフォマティックス１",
-  "インフォマティックス２",
-  "インフォマティックス３",
-  "インフォマティックス４",
-  "情報の挑戦者・開拓者たち",
-  "情報セキュリティとリテラシー１",
-  "情報セキュリティとリテラシー２",
-  "プログラミング１",
-  "プログラミング２",
-  "離散数学及び演習",
-  "論理設計及び演習１",
-  "論理設計及び演習２",
-  "情報理論",
-  "確率統計及び演習",
-  "アルゴリズム１",
-  "アルゴリズム２",
-  "システム数学及び演習１",
-  "システム数学及び演習２",
-  "論理学１",
-  "論理学２ｃ",
-  "データマイニング入門",
-
-  "情報倫理と法",
-  "ソフトウエア開発法及び演習",
-  "オブジェクト指向言語及び演習",
-  "代数的構造",
-  "オートマトン・形式言語及び演習",
-  "符号理論",
-  "数値解析及び演習",
-  "計算機アーキテクチャ基礎及び演習１",
-  "計算機アーキテクチャ基礎及び演習２",
-  "数理統計学",
   "機械学習",
   "信号処理",
-  "コンパイラ",
-  "データベース１",
-  "データベース２",
-  "最適化１",
-  "最適化２",
-  "人工知能基礎１",
-  "人工知能基礎２",
-  "自然言語処理１",
-  "自然言語処理２",
-  "生体情報処理",
+  "自然言語処理1",
+  "自然言語処理2",
+  "生体情報基礎",
   "画像処理",
-  "コンピュータ科学実験１",
-  "コンピュータ科学実験２",
-  "コンピュータ科学実験３",
-];
+].concat(recuquired_courses);
+
 
 const evaluation2gradepoint = {
   "A+": 4.3,
@@ -197,7 +153,7 @@ function main() {
         );
         grade_points_information_system +=
           evaluation2gradepoint[
-            remove_nbsp(table_rows.childNodes[i].childNodes[5].innerText)
+          remove_nbsp(table_rows.childNodes[i].childNodes[5].innerText)
           ] * credit;
         credits_information_system += credit;
         console.log(
@@ -218,7 +174,7 @@ function main() {
         );
         grade_points_intelligence_system +=
           evaluation2gradepoint[
-            remove_nbsp(table_rows.childNodes[i].childNodes[5].innerText)
+          remove_nbsp(table_rows.childNodes[i].childNodes[5].innerText)
           ] * credit;
         credits_intelligence_system += credit;
         console.log(
@@ -231,13 +187,11 @@ function main() {
   }
 
   console.log(
-    `information: ${
-      grade_points_information_system / credits_information_system
+    `information: ${grade_points_information_system / credits_information_system
     }`
   );
   console.log(
-    `intelligence: ${
-      grade_points_intelligence_system / credits_intelligence_system
+    `intelligence: ${grade_points_intelligence_system / credits_intelligence_system
     }`
   );
 
