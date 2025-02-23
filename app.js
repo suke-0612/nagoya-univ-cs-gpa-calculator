@@ -51,9 +51,9 @@ const common_required_major_courses = [
   "[遠隔]人工知能基礎２",
   "オペレーティング・システム基礎及び演習",
   "情報ネットワーク",
-  "コンピュータ科学実験a",
-  "コンピュータ科学実験b",
-  "コンピュータ科学実験c",
+  "コンピュータ科学実験ａ",
+  "コンピュータ科学実験ｂ",
+  "コンピュータ科学実験ｃ",
 ];
 
 const recuquired_courses = liveral_art_courses.concat(required_major_base_courses).concat(common_required_major_courses);
@@ -68,8 +68,8 @@ const required_courses_information_system = [
 const required_courses_intelligence_system = [
   "機械学習",
   "信号処理",
-  "自然言語処理1",
-  "自然言語処理2",
+  "自然言語処理１",
+  "自然言語処理２",
   "生体情報基礎",
   "画像処理",
 ].concat(recuquired_courses);
@@ -140,7 +140,8 @@ function main() {
   for (let i = 0; i < table_rows.childNodes.length; i++) {
     if (
       table_rows.childNodes[i].childNodes.length == 13 &&
-      remove_nbsp(table_rows.childNodes[i].childNodes[5].innerText) != "F"
+      remove_nbsp(table_rows.childNodes[i].childNodes[5].innerText) != "F" &&
+      remove_nbsp(table_rows.childNodes[i].childNodes[5].innerText) != "W"
     ) {
       // 情報システム系必修
       if (
